@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+		<html>
+		  <head>
+		    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+		    <script
+		      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBedCpF0ahbzf11yu0OvUo-lTB1jj8x8ec &callback=initMap&libraries=&v=weekly" defer>
+			</script>
+		    <style type="text/css">
+		      #map {
+		        height: 100%;
+		      }
+		      html,body {
+		        height: 100%;
+		        margin: 0;
+		        padding: 0;
+		      }
+		    </style>
+
+		    <script>
+		      function initMap() {
+		        const myLatLng = {
+		          lat: {{a}}/1000,
+		          lng: {{b}}/1000
+		        };
+		        const map = new google.maps.Map(document.getElementById("map"), {
+		          zoom: 14,
+		          center: myLatLng
+		        });
+		        new google.maps.Marker({
+		          position: myLatLng,
+		          map
+		        });
+		      }
+		    </script>
+		  </head>
+		  
+		  <body>
+		    <div id="map"></div> 
+		  </body>
+		</html>
